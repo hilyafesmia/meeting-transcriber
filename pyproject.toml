@@ -1,0 +1,24 @@
+[project]
+name = "meeting-transcriber"
+version = "0.1.0"
+description = "Local, offline transcription of Zoom recordings in Bahasa Indonesia with speaker diarization and timestamps."
+requires-python = ">=3.10"
+dependencies = [
+    "mlx-whisper>=0.4.0",
+    "pyannote.audio>=3.1.0",
+    "torch>=2.2",
+    "torchaudio>=2.2",
+    "click>=8.1",
+    "soundfile>=0.12",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+transcribe = "transcriber.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["transcriber*"]
